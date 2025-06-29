@@ -72,7 +72,7 @@ Siga os passos abaixo para rodar o projeto em seu ambiente local.
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="https://github.com/user-attachments/assets/4b555f99-1490-43fd-8833-0a76813ee8d9" alt="Tela Principal da Aplicação" width="80%">
+      <img src="https://github.com/user-attachments/assets/e051c5e5-e56d-4f9e-be52-e92ea13d32e5" alt="Tela Principal da Aplicação" width="80%">
     </td>
   </tr>
   
@@ -82,10 +82,10 @@ Siga os passos abaixo para rodar o projeto em seu ambiente local.
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/fe115c78-caf0-4d3b-8ee6-9bfca237bd97" alt="Tela de Criação de Agendamento" width="100%">
+      <img src="https://github.com/user-attachments/assets/f66f4de5-5534-41c7-8522-855ccfe121be" alt="Tela de Criação de Agendamento" width="100%">
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/b5fe1d92-b239-44e1-8452-2c96bc08886a" alt="Tela de Edição de Agendamento" width="100%">
+      <img src="https://github.com/user-attachments/assets/d7a3b9e0-8e8a-4bdb-85f4-bfff8b8ea2f7" alt="Tela de Edição de Agendamento" width="100%">
     </td>
   </tr>
 </table>
