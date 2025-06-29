@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'models/AgendamentoDAO.php';
 $searchTerm = $_GET['search'] ?? null;
 $agendamentoDAO = new AgendamentoDAO();
@@ -7,6 +8,7 @@ $agendamentos_passados = $agendamentoDAO->getAllPassados($searchTerm);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +16,7 @@ $agendamentos_passados = $agendamentoDAO->getAllPassados($searchTerm);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -37,6 +40,17 @@ $agendamentos_passados = $agendamentoDAO->getAllPassados($searchTerm);
         </div>
     </nav>
     <div class="container mt-5">
+        <?php
+        if (isset($_SESSION['success_message'])) {
+            echo '
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            ' . htmlspecialchars($_SESSION['success_message']) . '
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        ';
+            unset($_SESSION['success_message']);
+        }
+        ?>
         <h1 class="mb-4">Agendamentos da Consultoria</h1>
         <?php if ($searchTerm): ?>
             <div class="alert alert-info d-flex justify-content-between align-items-center">
@@ -92,6 +106,12 @@ $agendamentos_passados = $agendamentoDAO->getAllPassados($searchTerm);
                                     <?= date('d/m/Y H:i', strtotime($agendamento['data_inicial'])) ?>
                                 </p>
                             </div>
+                            <div class="card-footer bg-transparent border-top-0 pt-3">
+                                <a href="formulario_agendamento.php?id=<?= $agendamento['id'] ?>"
+                                    class="btn btn-sm btn-outline-secondary">Editar</a>
+                                <a href="actions/excluir_agendamento.php?id=<?= $agendamento['id'] ?>"
+                                    class="btn btn-sm btn-outline-danger btn-excluir">Excluir</a>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -108,4 +128,5 @@ $agendamentos_passados = $agendamentoDAO->getAllPassados($searchTerm);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
